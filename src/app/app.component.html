@@ -1,10 +1,7 @@
 <div>
   <div class="container">
-    <div>
-      Co będziemy dzisiaj robić? :)
-      <input [(ngModel)]="newTask">
-      <button (click)="add()">Dodaj</button>
-    </div>
+    <!-- Tutaj był DIV dodawanie zadań -->
+    <app-add-task (emitTask)="add($event)"></app-add-task>
   </div>
 
   <div class="container">
