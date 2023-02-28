@@ -1,6 +1,6 @@
-Zadania wykonane {{tasksDone.length}}, tak trzymaj!
-<ul>
-     <li appDate appChecked *ngFor="let task of tasksDone">
-        {{task.name}}
+<h5>Zadania wykonane {{tasksDone.length}}, tak trzymaj!</h5>
+<ul class="list-group list-group-flush">
+     <li class="list-group-item" appDate appChecked [date]="task.end" *ngFor="let task of tasksDone">
+        {{task.name | transformTask}}
     </li>
 </ul>
