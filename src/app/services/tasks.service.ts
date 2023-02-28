@@ -7,10 +7,10 @@ export class TasksService{
 
     title = 'lista-zadan';
   private tasksList: Array<Task> = [];
-  private tasksDone: Array<Task> = [];
+  // private tasksDone: Array<Task> = [];
 
   private tasksListObs = new BehaviorSubject<Array<Task>>([]);
-  private tasksDoneObs = new BehaviorSubject<Array<Task>>([]);
+  // 
 
   constructor(){
     this.tasksListObs.next(this.tasksList);
@@ -29,17 +29,21 @@ export class TasksService{
   }
 
   done(task: Task){
-    this.tasksDone.push(task);
-    this.remove(task);
-    this.tasksDoneObs.next(this.tasksDone);
+    task.end = new Date().toLocaleString();
+    task.isDone=true;
+    const list = this.tasksListObs.getValue();
+    this.tasksListObs.next(list);
+    // this.tasksDone.push(task);
+    // this.remove(task);
+    // this.tasksDoneObs.next(this.tasksDone);
   }
 
   getTasksListObs(): Observable<Array<Task>>{
     return this.tasksListObs.asObservable();
   }
 
-  getTasksDoneObs(): Observable<Array<Task>>{
-    return this.tasksDoneObs.asObservable();
-  }
+  // getTasksDoneObs(): Observable<Array<Task>>{
+  //   return this.tasksDoneObs.asObservable();
+  // }
 
 }

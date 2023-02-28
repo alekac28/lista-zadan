@@ -13,7 +13,7 @@ export class TodoTaskComponent {
 
   constructor(private tasksTaskservice: TasksService){
     this.tasksTaskservice.getTasksListObs().subscribe((tasks: Array<Task>) => {
-      this.tasksList = tasks;
+      this.tasksList = tasks.filter(t=>t.isDone===false);
     });
   }
 
@@ -23,7 +23,7 @@ export class TodoTaskComponent {
   }
 
   done(task: Task){
-    task.end = new Date().toLocaleString();
+    // task.end = new Date().toLocaleString();
     this.tasksTaskservice.done(task);
   }
 
