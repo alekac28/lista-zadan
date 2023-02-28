@@ -1,5 +1,6 @@
 Aplikacja typu "to do" do listowania oraz śledzenia postępów zadań użytkownika. Pozwala ona także na zliczanie ilości wykonanych tasków, co umożliwia mierzalność postępów aktywności.
 Aplikacja wyśiwetla po najechaniu kursorem na dane zadanie czas jego dodania oraz w późniejszym etapie czas jego zakończenia. 
+Aplikacja wykorzystuje technologię bootstrap.
 Aplikacja wykorzystuje komponenty, pipes, serwisy oraz dyrektywy. 
 Przygotowana jest ona wstępnie do działania ze środowiskiem bazo-danowym typu mongodb. 
 Folder "pokazowe" zawiera screeny z działającej aplikacji.
